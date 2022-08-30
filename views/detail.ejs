@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%- include("css.ejs") %>
+    <title>NOBEL PRIZE SIENCE</title>
+</head>
+<body>
+<%- include("header.ejs") %>
+<%- include("nav.ejs") %>
+
+<section class="section main">
+    <div class="container">
+        <div class="row rowd1">
+            <article class="content col-md-12">
+                <div class="col-md-6" style="margin-top: 20px; margin-right: -30px; margin-bottom: 10px"><img src="<%= scientist.image %>"/></div>
+                    <hr/>
+                    <h1 style="color: #CEA152;"><%= scientist.sname%></h1>
+                    <hr/>
+                    <h2 style="color: #CEA152">Story</h2>
+                    <p style="color: darkred;">Born: <%= scientist.birthday%> - Died: <%= scientist.dead %></p>
+                    <p style="color: darkred;">Nationality: <%= scientist.snationality%></p>
+                    <% for(var i=0;i<research.length;i++){ %>
+                    <p style="color: darkred;">Prize motivation: <%= research[i].rname %> - <a href="/researchdetail?rid=<%= research[i].rid %>" >More</a></p>
+                    <%}%>
+                    <p style="color: darkred;">Award year: <%= scientist.year %></p>
+                    <p><%= scientist.story %></p>
+
+<!--                </div>-->
+
+                </article>
+            <div class="col-md-12">
+                <hr/>
+                <h1>Early life and education</h1>
+                <hr/>
+
+            <div class="col-md-12" >
+                <div class="col-md-6"><img style="border-radius: 20px; margin-top: 8px; margin-left: -12px;" src="../image/education.webp"/></div>
+                <%- scientist.education %>
+            </div>
+
+            </div>
+            <div class="col-md-12">
+                <hr/>
+                <h1>Striving</h1>
+                <hr/>
+                <div class="col-md-12" >
+                    <div class="col-md-6"><img style="border-radius: 20px; margin-top: 8px;margin-left: -12px;" src="../image/striving.jpg"/></div>
+                    <%- scientist.striving %>
+                </div>
+
+            </div>
+            <div class="col-md-12">
+                <hr/>
+                <h1>Achievement</h1>
+                <hr/>
+                <div class="col-md-12" >
+                    <div class="col-md-6"><img style="border-radius: 20px; margin-top: 8px;margin-left: -12px;" src="../image/Award.jpg"/></div>
+                    <%- scientist.achievement %>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <hr/>
+                <h1>Research</h1>
+                <hr/>
+                <ul style="list-style: none" class="col-md-6">
+                <% for(var i=0;i<research.length;i++){ %>
+
+                    <li>Prize motivation:  <%= research[i].rname %> </li>
+                        <br/>
+                    <li>Description Research:  <%- research[i].rdescription %> </li>
+                        <li><a href="/researchdetail?rid=<%= research[i].rid %>" >More</a></li>
+
+                    <%}%>
+                </ul>
+                <div class="col-md-6"><img style="border-radius: 20px; margin-top: 8px" src="../image/research.jpg"/></div>
+            </div>
+            <div class="col-md-12">
+                <hr/>
+                <h1>Related books</h1>
+                <hr/>
+                <ul style="list-style: none" class="col-md-6">
+                <% for(var i=0;i<book.length;i++){ %>
+                    <li>Book <%= i+1 %> :  <%= book[i].bname %> </li>
+                        <li><%- book[i].bdescription %> </li>
+                <%}%>
+                </ul>
+                <div class="col-md-6"><img style="border-radius: 20px; margin-top: 8px" src="../image/book.jpg"/></div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="row rowd2">
+
+
+
+        </div>
+    </div>
+</section>
+<%- include("footer.ejs") %>
+
+</body>
+</html>

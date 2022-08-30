@@ -1,0 +1,46 @@
+.site-footer
+{
+    padding:45px 0 20px;
+    font-size:15px;
+    line-height:24px;
+    font-family: 'Roboto Slab', serif;
+
+}
+
+
+.site-footer hr
+{
+    border-top-color:#111111;
+    opacity:0.5
+}
+.site-footer h6
+{
+    font-size:17px;
+    text-transform:uppercase;
+    margin-top:5px;
+    letter-spacing:2px;
+    color: #CEA152;
+
+
+}
+.footer-links
+{
+    padding-left:0;
+    list-style:none
+}
+.footer-links a{
+    color: #111111;
+}
+.footer-links a:hover{
+    color: #CEA152;
+}
+
+.copyright-text
+{
+
+    text-align: center;
+    color: #CEA152;
+    font-size: 17px;
+}
+
+

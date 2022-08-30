@@ -1,0 +1,63 @@
+#webname {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    color: #CEA152;
+
+}
+#webname:hover{
+    text-decoration: none;
+}
+#webname p{
+    margin-top: 40px;
+}
+.count{
+    margin-top: 10px;
+    float: right;
+    color: #CEA152;
+}
+#count{
+    float: right;
+    color: #CEA152;
+    margin-left: 5px;
+}
+section#nav-test {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    margin-top: 38px;
+}
+section#nav-test  ul {
+    display: flex;
+    background: #323639;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    padding-left: 66px;
+    padding-right: 32px;
+    margin: 0;
+}
+section#nav-test  ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 60px;
+    min-height: 58px;
+    margin-left: 60px;
+    cursor: pointer;
+}
+section#nav-test  ul li :hover{
+    color: #CEA152;
+    text-decoration: none;
+}
+section#nav-test  ul li:first-child {
+    margin-left: 0;
+}
+section#nav-test ul li a {
+    color: #f1f1f1;
+}
+
+
+
+
+

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%- include("css.ejs") %>
+
+    <title>NOBEL PRIZE SIENCE</title>
+</head>
+<body>
+<%- include("header.ejs") %>
+<%- include("nav.ejs") %>
+
+<section class="section main research">
+    <div class="container" style="margin-top: -40px">
+        <div class="row" >
+            <div class="col-md-12">
+                <hr/>
+                <h1 style="color: #CEA152">Research</h1>
+                <hr/>
+                <div class="col-md-12">
+                  <p><%= research.rname%></p>
+
+                </div>
+                <hr/>
+            </div>
+            <div class="col-md-12">
+                <hr/>
+                <h1 style="color: #CEA152">Content</h1>
+                <hr/>
+                <div class="col-md-12">
+                    <div class="col-md-6"><img style="border-radius: 20px; margin-top: 8px" src="../image/research.jpg"/></div>
+                    <div class="col-md-6"><%= research.rdescription%></div>
+                </div>
+            </div>
+
+            <div class=" col-md-12">
+                <hr/>
+                <h1 style="color: #CEA152">Researchers</h1>
+                <hr/>
+                <form  method="get" action="/search">
+                    <ol class="col-md-12">
+                        <% for(var i=0;i<scientistList.length;i++){ %>
+                            <li class="col-md-12" style="margin-top: 30px; list-style: none; padding: unset; line-height: 2;">
+                                <div class="col-md-4">
+                                    <a href="/scientist-detail?sid=<%= scientistList[i].sid %>"><img src="<%= scientistList[i].image %>"/></a>
+                                </div>
+                                <div class="col-md-8">
+                                    <h1 style="color: #0182C9;margin-top: -3px"><a href="/scientist-detail?sid=<%= scientistList[i].sid %>"><%= scientistList[i].sname %></a></h1>
+                                    <h2 style="color: #CEA152">Story</h2>
+                                    <ul style="list-style: none;margin-left: -14px">
+                                        <li>Nationality: <%= scientistList[i].snationality %></li>
+                                        <li>Award Year:  <%= scientistList[i].year %></li>
+                                        <li><%= scientistList[i].story %></li>
+                                        <li><a href="/scientist-detail?sid=<%= scientistList[i].sid %>" >More</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        <%}%>
+
+                    </ol>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+<%- include("footer.ejs") %>
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/owl.carousel.min.js"></script>
+
+
+</body>
+</html>

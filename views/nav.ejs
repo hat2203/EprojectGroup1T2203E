@@ -1,0 +1,37 @@
+<nav class="section nav">
+    <div class="container">
+        <section id="nav-test" class="row">
+            <div id="nav-container" class="col-md-12">
+                <ul>
+                    <li class="nav-li"><a href="/">Home</a></li>
+                    <li class="nav-li"><a href="/chemistryprize">Chemistry Prize</a></li>
+                    <li class="nav-li"><a href="/physicsprize">Physics Prize</a></li>
+                    <li class="nav-li"><a href="/medicineprize">Medicine Prize</a></li>
+                    <li class="nav-li"><a href="/economicprize">Prize in Economic Sciences</a></li>
+                    <li class="nav-li"><a href="/aboutus">About US</a></li>
+                    <li class="nav-li"><a data-toggle="modal" data-target="#myModal">
+                            Search
+                        </a>
+                        <!-- The Modal -->
+                        <div class="modal fade" id="myModal">
+                            <div class="modal-dialog modal-lg modal-dialog-centered">
+                                <div class="modal-content" style="display: flex;justify-content: center; margin-top: 220px;">
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        <form method="get" action="/searchdetail">
+                                            <input type="text" name="s" placeholder="..." style="border-color: #34afd5; padding: 5px 20px; border-radius: 10px; margin-top: 3px;margin-right: 10px;">
+                                            <button type="submit" class="btn btn-info" style="border-radius: 10px;">Search</button>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+    </div>
+</nav>

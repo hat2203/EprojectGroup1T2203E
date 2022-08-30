@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%- include("css.ejs") %>
+
+    <title>NOBEL PRIZE SIENCE</title>
+</head>
+<body>
+<%- include("header.ejs") %>
+<%- include("nav.ejs") %>
+
+<section class="section main">
+    <div class="container" style="margin-top: -50px">
+        <div class="row rowmain2">
+            <div class="col-md-12">
+                <hr/>
+                <h1 style="color: #0182C9; text-align: center">Search Results</h1>
+                <hr/>
+                <ol class="col-md-12">
+                    <% for(var i=0;i<scientistList.length;i++){ %>
+                    <li class="col-md-12" style="margin-top: 30px; list-style: none; padding: unset; line-height: 2;">
+                        <div class="col-md-4">
+                            <a href="/scientist-detail?sid=<%= scientistList[i].sid %>"><img src="<%= scientistList[i].image %>"/></a>
+                        </div>
+                        <div class="col-md-8">
+                            <h4 style="color: #0182C9;margin-top: -3px"><a href="/scientist-detail?sid=<%= scientistList[i].sid %>"><%= scientistList[i].sname %></a></h4>
+                            <ul>
+                                <li>Nationality: <%= scientistList[i].snationality %></li>
+                                <li>Award Year:  <%= scientistList[i].year %></li>
+                                <li><%= scientistList[i].story %></li>
+                                <li><a href="/scientist-detail?sid=<%= scientistList[i].sid %>" >More</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <%};%>
+
+                </ol>
+            </div>
+
+            <div class="col-md-12">
+
+                <ol class="col-md-12">
+                    <% for(var i=0;i<scientistcontinent.length;i++){ %>
+                        <li class="col-md-12" style="margin-top: 30px; list-style: none; padding: unset; line-height: 2;">
+                            <div class="col-md-4">
+                                <a href="/scientist-detail?sid=<%= scientistcontinent[i].sid %>">  <img src="<%= scientistcontinent[i].image %>"/></a>
+                            </div>
+                            <div class="col-md-8">
+                                <h4 style="color: #0182C9;margin-top: -3px"> <a href="/scientist-detail?sid=<%= scientistcontinent[i].sid %>"><%= scientistcontinent[i].sname %></a></h4>
+                                <ul>
+
+                                    <li>Nationality: <%= scientistcontinent[i].snationality %></li>
+                                    <li>Award Year:  <%= scientistcontinent[i].year %></li>
+                                    <li><%= scientistcontinent[i].story %></li>
+                                    <li><a href="/scientist-detail?sid=<%= scientistcontinent[i].sid %>" >More</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    <%};%>
+                </ol>
+
+            </div>
+            <div class="col-md-12">
+                <div>
+
+                    <ol class="col-md-12">
+                        <% for(var i=0;i<scientistyear.length;i++){ %>
+                            <li class="col-md-12" style="margin-top: 30px; list-style: none; padding: unset; line-height: 2;">
+                                <div class="col-md-4">
+                                    <a href="/scientist-detail?sid=<%= scientistyear[i].sid %>"><img src="<%= scientistyear[i].image %>"/></a>
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 style="color: #0182C9;margin-top: -3px"><a href="/scientist-detail?sid=<%= scientistyear[i].sid %>"><%= scientistyear[i].sname %></a></h4>
+                                    <ul>
+                                        <li>Nationality: <%= scientistyear[i].snationality %></li>
+                                        <li>Award Year: <%= scientistyear[i].year %></li>
+                                        <li><%= scientistyear[i].story %></li>
+                                        <li><a href="/scientist-detail?sid=<%= scientistyear[i].sid %>" >More</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        <%};%>
+                    </ol>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <ol>
+                    <% for(var i=0;i<researchList.length;i++){ %>
+                        <li class="col-md-12" style="margin-top: 30px;">
+                            <h4 style="color: #0182C9;"><a href="/researchdetail?rid=<%= researchList[i].rid %>" ><%= researchList[i].rname%></a></h4>
+                        </li>
+                    <%};%>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+<%- include("footer.ejs") %>
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/owl.carousel.min.js"></script>
+
+
+
+</body>
+</html>

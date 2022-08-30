@@ -1,0 +1,89 @@
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/owl.carousel.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+        <hr>
+            <div class="col-md-6">
+                <hr>
+                <h6>Contact US</h6>
+                <ul class="footer-links">
+                    <li><i>If you have any suggestions, please feel free to contact us</i></li>
+                    <li>Gmail: Group1T2203EfptAptech@gmail.com </li>
+                    <li>Hotline:  888-338-6485</li>
+                </ul>
+                <p class="text-justify"></p>
+            </div>
+
+            <div class="col-md-3">
+                <hr>
+                <h6>Source</h6>
+                <ul class="footer-links">
+                    <li><a href="https://www.nobelprize.org/prizes/">Nobelprize</a></li>
+                    <li><a href="https://vi.wikipedia.org/wiki/Trang_Ch%C3%ADnh">Wikipedia</a></li>
+                </ul>
+            </div>
+
+            <div class=" col-md-3">
+                <hr>
+                <h6>Quick Links</h6>
+                <ul class="footer-links">
+                    <li><a href="/aboutus">About Us</a></li>
+                    <li class="nav-li"><a data-toggle="modal" data-target="#myModal">
+                            Search
+                        </a>
+                        <!-- The Modal -->
+                        <div class="modal fade" id="myModal">
+                            <div class="modal-dialog modal-lg modal-dialog-centered">
+                                <div class="modal-content" style="display: flex;justify-content: center; margin-top: 220px;">
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        <form method="get" action="/searchdetail">
+                                            <input type="text" name="s" placeholder="..." style="border-color: #34afd5; padding: 5px 20px; border-radius: 10px; margin-top: 3px;margin-right: 10px;">
+                                            <button type="submit" class="btn btn-info" style="border-radius: 10px;">Search</button>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="/">Home</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="copyright-text">@Group1-T2203E All Rights Reserved - 2022</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        var offset = 500;
+
+        var duration = 35;
+        $(function(){
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > offset)
+                    $('#top-up').fadeIn(duration);else
+                    $('#top-up').fadeOut(duration);
+            });
+            $('#top-up').click(function () {
+                $('body,html').animate({scrollTop: 0}, duration);
+            });
+        });
+    </script>
+    <div title="Về đầu trang" id="top-up">
+        <i class="fas fa-angle-double-up"></i>
+    </div>
+</footer>

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%- include("css.ejs") %>
+
+    <title>NOBEL PRIZE SIENCE</title>
+</head>
+<body>
+<%- include("header.ejs") %>
+<%- include("nav.ejs") %>
+
+<section class="section main">
+    <div class="container">
+        <div class="row rowe1" >
+            <div class=" col-md-12">
+                <div><img src="../image/homethree.webp"/></div>
+                <p id="descriptionimg" style="margin-top: -150px;">THE NOBEL PRIZE IN PHYSICS</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container rowe2">
+        <div class="row">
+            <div class=" col-md-12">
+                <h1><%= economic.pname %></h1>
+            </div>
+            <div class="col-md-9 descrip">
+                <h2 style="color: #CEA152;">About the prize</h2>
+                <p style="padding-left: 12px;"><%= economic.pdescription %></p>
+            </div>
+            <div class="col-md-3 quick">
+                <h2 style="color: #CEA152;">Quick facts</h2>
+                <ul>
+                    <li>Number of winners: <%= scientistList.length %></li>
+                    <li>Featured laureates:
+                        <% var dem=0;%>
+                        <% for(var i=0;i<scientistList.length;i++){ %>
+                            <% if(scientistList[i].status.includes('Featured')){%>
+                                <% dem++;%>
+                            <%};%>
+                        <%}%>
+                        <%= dem%>
+                    </li>
+                    <li>Featured research: <%= researchFeatured.length%></li>
+                </ul>
+            </div>
+            <div class="col-md-12">
+                <hr/>
+                <h2 style="color:#CEA152;">Featured laureates</h2>
+                <hr/>
+            </div>
+
+            <ol class="col-md-12">
+                <% for(var i=0;i<scientistList.length;i++){ %>
+                    <% if(scientistList[i].status.includes('Featured')){%>
+                    <li class="col-md-4" style="margin-top: 30px; list-style: none; padding: unset; line-height: 2;height: 280px">
+                        <div class="col-md-6">
+                            <a href="/scientist-detail?sid=<%= scientistList[i].sid %>"><img src="<%= scientistList[i].image %>"/></a>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 style="color: #0182C9; margin-top: -3px"><a href="/scientist-detail?sid=<%= scientistList[i].sid %>"><%= scientistList[i].sname %></a></h4>
+                            <ul>
+                                <li>Nationality: <%= scientistList[i].snationality %></li>
+                                <li>Born: <%= scientistList[i].birthday %></li>
+                                <li>Award Year: <%= scientistList[i].year %></li>
+                                <li><a href="/scientist-detail?sid=<%= scientistList[i].sid %>">More</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                        <%};%>
+                <%}%>
+
+            </ol>
+            <div class="col-md-12">
+                <hr/>
+                <h2 style="color: #CEA152">Featured research</h2>
+                <hr/>
+                <ol>
+                    <% for(var i=0;i<researchFeatured.length;i++){ %>
+
+                        <li class="col-md-4" style="margin-top: 20px;height: 120px;">
+                            <p style="color: #0182C9; font-size: 15px; padding-right: 5px"><a href="/researchdetail?rid=<%= researchFeatured[i].rid %>" ><%= researchFeatured[i].rname%></a></p>
+                        </li>
+
+                    <%};%>
+                </ol>
+
+            </div>
+        </div>
+    </div>
+
+            <div class="container">
+                <div class="row">
+                    <hr/>
+                    <div><img src="../image/homenine.jpg"/></div>
+                    <p style="color: #FFFFFF; margin-top: -90px;" id="descriptionimg">Discover more</p>
+                    <hr/>
+                </div>
+                <div class="row rowe3" >
+
+                    <div class="owl-carousel col-md-12">
+                        <% for(var i=0;i<scientistList.length;i++){ %>
+                            <div> <a href="/scientist-detail?sid=<%= scientistList[i].sid %>"><img src="<%= scientistList[i].image %>"/></a>
+                                <p style="font-size: 16px;text-align: center; margin-top: 10px"><%= scientistList[i].sname %></p>
+                                <p style="text-align: center">Prize motivation: <%= scientistList[i].rname %></p>
+                            </div>
+                        <%}%>
+                    </div>
+                    <ol class="col-md-12">
+                        <% for(var i=0;i<scientistList.length;i++){ %>
+                            <% if(scientistList[i].status.includes('Featured')){%>
+                            <li class="col-md-12" style="margin-top: 30px;list-style: none; padding: unset; line-height: 2;">
+                                <div class="col-md-3">
+                                    <a href="/scientist-detail?sid=<%= scientistList[i].sid %>"><img src="<%= scientistList[i].image %>"/></a>
+                                </div>
+                                <div class="col-md-9" style="margin-top: -25px;">
+                                    <h3 style="color: #0182C9;"><a href="/scientist-detail?sid=<%= scientistList[i].sid %>"><%= scientistList[i].sname %></a></h3>
+                                    <p>Nationality: <%= scientistList[i].snationality %></p>
+                                    <p>Award Year: <%= scientistList[i].year %></p>
+                                    <p>Prize motivation: <%= scientistList[i].rname %></p>
+                                    <p style="text-align:justify;text-justify:inter-character;"><%= scientistList[i].story %></p>
+                                    <p><a href="/scientist-detail?sid=<%= scientistList[i].sid %>" >More</a></p>
+                                </div>
+                            </li>
+                                <%};%>
+                        <%}%>
+                    </ol>
+                </div>
+            </div>
+
+
+            <div class="container">
+                <div class="row">
+                    <hr/>
+                    <div><img src="../image/hometen.webp"/></div>
+                    <p style="color: #FFFFFF; margin-top: -80px" id="descriptionimg">All Prizes in Physics</p>
+                    <hr/>
+
+                </div>
+                <div class="row rowe4" >
+                    <div class=" col-md-12">
+
+                        <table class="table ">
+                            <thead>
+                            <th>Serial</th>
+                            <th>Name</th>
+                            <th>Prize motivation</th>
+                            <th>Award year</th>
+                            <th>Nationality</th>
+                            <th>More</th>
+                            </thead>
+                            <tbody >
+                            <% for(var i=0;i<scientistList.length;i++){ %>
+                                <tr>
+                                    <td><%= i+1 %></td>
+                                    <td><%= scientistList[i].sname %></td>
+                                    <td><%= scientistList[i].rname %></td>
+                                    <td><%= scientistList[i].year %></td>
+                                    <td><%= scientistList[i].snationality %></td>
+                                    <td><a href="/scientist-detail?sid=<%= scientistList[i].sid %>" >More</a></td>
+                                </tr>
+                            <%}%>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+</section>
+<%- include("footer.ejs") %>
+
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/owl.carousel.min.js"></script>
+<script type="text/javascript">
+    var owl = $('.owl-carousel');
+    owl.owlCarousel({
+        items:4,
+        loop:true,
+        margin:10,
+        autoplay:true,
+        autoplayTimeout:1000,
+        autoplayHoverPause:true
+    });
+    $('.play').on('click',function(){
+        owl.trigger('play.owl.autoplay',[1000])
+    })
+    $('.stop').on('click',function(){
+        owl.trigger('stop.owl.autoplay')
+    })
+</script>
+
+</body>
+</html>

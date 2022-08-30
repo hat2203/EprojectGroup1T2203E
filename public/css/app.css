@@ -1,0 +1,188 @@
+*{
+    margin: unset;
+    padding: unset;
+    font-family: 'Roboto Slab', serif;
+
+}
+body{
+    background-color: #FFFFFF;
+    font-size: 14px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+    text-align: left;
+    color: #333333;
+
+}
+ul{
+    padding-left: 15px;
+}
+
+a{
+    color: #0182C9;
+}
+a:hover{
+    color: #CEA152 !important;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+img{
+    max-width: 100%;
+}
+.section{
+    float: left;
+    width: 100%;
+}
+.container{
+
+    max-width: 100%;
+    margin: 0 auto;
+}
+.columns-right .content{
+    float: left;
+    width: 66.67%;
+
+}
+.columns-right .sidebar{
+    float: right;
+    width: 33.33%;
+
+}
+.columns-left .content{
+    float: right;
+    width: 66.67%;
+
+}
+.columns-left .sidebar{
+    float: left;
+    width: 33.33%;
+
+}
+.one-column .content{
+    float: left;
+    width: 100%;
+}
+.one-column .sidebar{
+    display: none;
+}
+.main{
+    margin-top: 80px;
+}
+.owl-carousel img{
+    transform: scale(1);
+    transition: all 0.5s;
+}
+.owl-carousel img:hover{
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+.rowmain1{
+    font-size: 16px;
+    line-height: 1.5;
+    text-align:justify;
+    text-justify:inter-character;
+}
+.rowmain1 img{
+    transform: scale(1);
+    transition: all 0.5s;
+}
+.rowmain1 img:hover{
+    transform: scale(1.15);
+    cursor: pointer;
+}
+.rowmain1 h1{
+    color: #CEA152;
+}
+
+.rowmain2{
+    line-height: 1.5;
+    text-align:justify;
+    text-justify:inter-character;
+
+}
+.rowmain2 ul li{
+    list-style: none;
+    margin-left: -12px;
+}
+
+.rowmain2 img{
+    transform: scale(1);
+    transition: all 0.5s;
+    border-radius: 10px;
+}
+.rowmain2 img:hover{
+    transform: scale(1.15);
+    cursor: pointer;
+}
+
+.research{
+    font-size: 16px;
+    line-height: 2;
+    text-align:justify;
+    text-justify:inter-character;
+}
+.research img{
+    transform: scale(1);
+    transition: all 0.5s;
+    border-radius: 10px;
+}
+.research img:hover{
+    transform: scale(1.15);
+    cursor: pointer;
+}
+.formsearch{
+    background-image: url("../image/homeone.webp");
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    padding: unset;
+    width: 274px;
+    height: 400px;
+    font-size: 15px;
+    margin-right: 10px;
+    text-align:center;
+    transform: scale(1);
+    transition: all 0.4s;
+    border-color: #111111;
+
+}
+.formsearch:hover{
+    transform: scale(1.06);
+    cursor: pointer;
+}
+.table tbody tr{
+    transform: scale(1);
+    transition: all 0.2s;
+
+}
+.table tbody tr:hover{
+    transform: scale(1.01);
+    cursor: pointer;
+    background-color: #d53024;
+}
+.columabout{
+    border-radius: 13px;
+    height: 400px;
+    font-size: 15px;
+    text-align:center;
+    transform: scale(1);
+    transition: all 0.4s;
+    color: #111111;
+    box-shadow:0 0 1px #333333;
+}
+.columabout:hover{
+    cursor: pointer;
+    box-shadow:0 0 20px #CEA152;
+}
+#top-up {
+    font-size: 3rem;
+    cursor: pointer;
+    position: fixed;
+    z-index: 9999;
+    color:#004993;
+    bottom: 20px;
+    right: 15px;
+    display: none;
+}
+#top-up:hover {
+    color: #CEA152;
+}
