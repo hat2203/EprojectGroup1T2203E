@@ -1,7 +1,7 @@
 
 const express = require("express");
 const app = express();
-const port = process.env.PORT | 3000;
+const port = process.env.PORT || 3000;
 
 app.listen(port,function (){
     console.log("server is running..");
@@ -14,11 +14,11 @@ var count=0;
 const mysql =require("mysql");
 const moment = require("moment");
 const conn = mysql.createConnection({
-    host:"localhost",
+    host:"db4free.net",
     port:"3306",
-    user:"root",
-    password:"",
-    database:"eproject",
+    user:"nguyenhat2203e",
+    password:"12345678ah",
+    database:"eprojectgroup1",
     multipleStatements: true
 });
 
